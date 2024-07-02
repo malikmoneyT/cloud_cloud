@@ -1,14 +1,9 @@
 from flask import Flask, request, jsonify, render_template
 import boto3
 from templates import *
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 # Initialize the Amazon Comprehend client
 comprehend = boto3.client('comprehend', region_name='ca-central-1')
@@ -31,5 +26,5 @@ def analyze():
     return jsonify(sentiment_scores)
 
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     app.run(debug=True)
